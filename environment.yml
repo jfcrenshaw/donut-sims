@@ -1,0 +1,10 @@
+name: donut-sims
+
+channels:
+  - defaults
+  - conda-forge
+
+dependencies:
+  - python=3.9
+  - poetry=1.1.*
+  - compilers
