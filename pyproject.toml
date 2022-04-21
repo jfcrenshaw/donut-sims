@@ -7,10 +7,32 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+GalSim = "^2.3.4"
 batoid = "^0.3.7"
 wfsim = {git = "git@github.com:jmeyers314/wfsim.git", rev = "main"}
+matplotlib = "^3.5.1"
+jupyter = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
+black = "^21.12b0"
+mypy = "^0.931"
+isort = "^5.10.1"
+flake8 = "^4.0.1"
+flake8-black = "^0.2.3"
+flake8-broken-line = "^0.4.0"
+flake8-bugbear = "^22.1.11"
+flake8-builtins = "^1.5.3"
+flake8-comprehensions = "^3.8.0"
+flake8-docstrings = "^1.6.0"
+flake8-eradicate = "^1.2.0"
+flake8-isort = "^4.1.1"
+flake8-markdown = "^0.3.0"
+flake8-print = "^4.0.0"
+flake8-pytest-style = "^1.6.0"
+flake8-simplify = "^0.14.5"
+flake8-tidy-imports = "^4.6.0"
+jupyterlab-flake8 = "^0.7.1"
+pep8-naming = "^0.12.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
