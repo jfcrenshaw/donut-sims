@@ -1,15 +1,15 @@
 [tool.poetry]
-name = "donut-sims"
+name = "donut_sims"
 version = "0.1.0"
 description = "Donut simulations for the Rubin AOS Wavefront estimation pipeline."
 authors = ["John Franklin Crenshaw <jfcrenshaw@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.8,<3.11"
 GalSim = "^2.3.4"
 batoid = "^0.3.7"
-wfsim = {git = "git@github.com:jmeyers314/wfsim.git", rev = "main"}
+scipy = "^1.8.0"
 matplotlib = "^3.5.1"
 jupyter = "^1.0.0"
 
