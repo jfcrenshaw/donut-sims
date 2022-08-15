@@ -1,0 +1,1627 @@
+seed=0
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m43s 
+
+seed=1
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m54s 
+
+seed=2
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h04m01s 
+
+seed=3
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m09s 
+
+seed=4
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h02m04s 
+
+seed=5
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m27s 
+
+seed=6
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m52s 
+
+seed=7
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h04m15s 
+
+seed=8
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h06m54s 
+
+seed=9
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m17s 
+
+seed=10
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m52s 
+
+seed=11
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h04m12s 
+
+seed=12
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m14s 
+
+seed=13
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m56s 
+
+seed=14
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m11s 
+
+seed=15
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m57s 
+
+seed=16
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m57s 
+
+seed=17
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m50s 
+
+seed=18
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h02m37s 
+
+seed=19
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h00m52s 
+
+seed=20
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h02m56s 
+
+seed=21
+Generating DOFs...
+Simulating observation...
+selecting sources
+Traceback (most recent call last):
+  File "test_small_sim.py", line 29, in <module>
+    observation = obsSimulator.simulateObs(dof, rng)
+  File "/phys/users/jfc20/donut-sims/donut_sims/obsSimulator.py", line 99, in simulateObs
+    catalog = self.sourceSelector.selectSources(
+  File "/phys/users/jfc20/donut-sims/donut_sims/gaiaSourceSelector.py", line 379, in selectSources
+    cat = self._convertFluxesToLsstMag(cat, lsstFilter)
+  File "/phys/users/jfc20/donut-sims/donut_sims/gaiaSourceSelector.py", line 187, in _convertFluxesToLsstMag
+    lsstMag.append(sed.calculateMagnitude(bandpass))
+  File "/phys/users/jfc20/.local/lib/python3.8/site-packages/galsim/sed.py", line 829, in calculateMagnitude
+    flux = self.calculateFlux(bandpass)
+  File "/phys/users/jfc20/.local/lib/python3.8/site-packages/galsim/sed.py", line 785, in calculateFlux
+    raise GalSimRangeError("Bandpass is not completely within defined wavelength "
+galsim.errors.GalSimRangeError: Bandpass is not completely within defined wavelength range for this SED. Value (305.3, 408.6) not in range [330.0, 1110.0]
+seed=21
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m05s 
+
+seed=22
+Generating DOFs...
+Simulating observation...
+selecting sources
+Traceback (most recent call last):
+  File "test_small_sim.py", line 29, in <module>
+    observation = obsSimulator.simulateObs(dof, rng)
+  File "/phys/users/jfc20/donut-sims/donut_sims/obsSimulator.py", line 99, in simulateObs
+    catalog = self.sourceSelector.selectSources(
+  File "/phys/users/jfc20/donut-sims/donut_sims/gaiaSourceSelector.py", line 353, in selectSources
+    skyBox = refObjLoader.loadPixelBox(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/meas_algorithms/gbe01a4569f+c1b4442b1a/python/lsst/meas/algorithms/loadReferenceObjects.py", line 856, in loadPixelBox
+    return self.loadRegion(outerSkyRegion, filterName, filtFunc=_filterFunction, epoch=epoch)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/meas_algorithms/gbe01a4569f+c1b4442b1a/python/lsst/meas/algorithms/loadReferenceObjects.py", line 926, in loadRegion
+    raise RuntimeError("No reference tables could be found for input region")
+RuntimeError: No reference tables could be found for input region
+seed=22
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m56s 
+
+seed=23
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h29m57s 
+
+seed=24
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m45s 
+
+seed=25
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h04m48s 
+
+seed=26
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m28s 
+
+seed=27
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Traceback (most recent call last):
+  File "test_small_sim.py", line 34, in <module>
+    stb.saveSimulation(name, observation, dof)
+  File "/phys/users/jfc20/donut-sims/donut_sims/simsToButler.py", line 213, in saveSimulation
+    donutStamps = self.wrapStamps(stamps, catalog)
+  File "/phys/users/jfc20/donut-sims/donut_sims/simsToButler.py", line 108, in wrapStamps
+    DonutStamp(
+  File "<string>", line 11, in __init__
+  File "/phys/users/jfc20/lsst/ts_wep/python/lsst/ts/wep/task/DonutStamp.py", line 89, in __post_init__
+    self._setCompensableImage()
+  File "/phys/users/jfc20/lsst/ts_wep/python/lsst/ts/wep/task/DonutStamp.py", line 188, in _setCompensableImage
+    self.comp_im.setImg(
+  File "/phys/users/jfc20/lsst/ts_wep/python/lsst/ts/wep/cwfs/CompensableImage.py", line 214, in setImg
+    self._checkImgShape()
+  File "/phys/users/jfc20/lsst/ts_wep/python/lsst/ts/wep/cwfs/CompensableImage.py", line 234, in _checkImgShape
+    raise RuntimeError("Only square image stamps are accepted.")
+RuntimeError: Only square image stamps are accepted.
+seed=27
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+1735 269 85
+3240 972 85
+2913 831 85
+2696 1141 85
+994 902 85
+753 678 85
+807 840 85
+2794 249 85
+1926 1787 85
+691 170 85
+2630 859 85
+612 1096 85
+1115 1546 85
+3744 1377 85
+318 1760 85
+1650 1729 85
+3344 727 85
+691 1333 85
+1638 1337 85
+1230 3411 85
+862 3120 85
+965 2137 85
+1299 2220 85
+949 2647 85
+1372 1918 85
+784 2140 85
+641 1779 85
+1387 3813 85
+1816 3512 85
+811 1806 85
+1271 2309 85
+1921 1818 85
+1405 877 85
+942 2740 85
+1570 2625 85
+1029 3781 85
+1747 3713 85
+764 1756 85
+598 2984 85
+346 3315 85
+919 1797 85
+937 1494 85
+1655 488 85
+648 1064 85
+930 1436 85
+172 1115 85
+1296 2388 85
+461 1850 85
+1428 1570 85
+2336 1322 85
+1450 379 85
+1285 620 85
+2012 1125 85
+3216 1158 85
+3360 1204 85
+2789 496 85
+2050 237 85
+600 544 85
+796 1643 85
+2616 1682 85
+correcting centroids
+Saving sims in butler...
+Traceback (most recent call last):
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: visit.instrument, visit.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "test_small_sim.py", line 34, in <module>
+    stb.saveSimulation(name, observation, dof)
+  File "/phys/users/jfc20/donut-sims/donut_sims/simsToButler.py", line 202, in saveSimulation
+    self.registry.insertDimensionData(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registries/sql.py", line 759, in insertDimensionData
+    storage.insert(*records, replace=replace)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/dimensions/table.py", line 234, in insert
+    self._db.insert(self._table, *elementRows)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/databases/sqlite.py", line 454, in insert
+    return super().insert(table, *rows, select=select, names=names, returnIds=returnIds)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/interfaces/_database.py", line 1421, in insert
+    connection.execute(table.insert(), rows)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1289, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: visit.instrument, visit.name
+[SQL: INSERT INTO visit (instrument, id, physical_filter, visit_system, name, day_obs, exposure_time, target_name, observation_reason, science_program, zenith_angle, region, timespan_begin, timespan_end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('LSSTCam', 1147892, 'i', None, 'seed=27', None, None, None, None, None, None, None, 0, 4102444800000000000)]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+seed=27
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+1735 269 85
+1735 269 (170, 170)
+3240 972 85
+3240 972 (170, 170)
+2913 831 85
+2913 831 (170, 170)
+2696 1141 85
+2696 1141 (170, 170)
+994 902 85
+994 902 (170, 170)
+753 678 85
+753 678 (170, 170)
+807 840 85
+807 840 (170, 170)
+2794 249 85
+2794 249 (170, 170)
+1926 1787 85
+1926 1787 (170, 170)
+691 170 85
+691 170 (170, 170)
+2630 859 85
+2630 859 (170, 170)
+612 1096 85
+612 1096 (170, 170)
+1115 1546 85
+1115 1546 (170, 170)
+3744 1377 85
+3744 1377 (170, 170)
+318 1760 85
+318 1760 (170, 170)
+1650 1729 85
+1650 1729 (170, 170)
+3344 727 85
+3344 727 (170, 170)
+691 1333 85
+691 1333 (170, 170)
+1638 1337 85
+1638 1337 (170, 170)
+1230 3411 85
+1230 3411 (170, 170)
+862 3120 85
+862 3120 (170, 170)
+965 2137 85
+965 2137 (170, 170)
+1299 2220 85
+1299 2220 (170, 170)
+949 2647 85
+949 2647 (170, 170)
+1372 1918 85
+1372 1918 (170, 170)
+784 2140 85
+784 2140 (170, 170)
+641 1779 85
+641 1779 (170, 170)
+1387 3813 85
+1387 3813 (170, 170)
+1816 3512 85
+1816 3512 (170, 170)
+811 1806 85
+811 1806 (170, 170)
+1271 2309 85
+1271 2309 (170, 170)
+1921 1818 85
+1921 1818 (170, 164)
+1405 877 85
+1405 877 (170, 170)
+942 2740 85
+942 2740 (170, 170)
+1570 2625 85
+1570 2625 (170, 170)
+1029 3781 85
+1029 3781 (170, 170)
+1747 3713 85
+1747 3713 (170, 170)
+764 1756 85
+764 1756 (170, 170)
+598 2984 85
+598 2984 (170, 170)
+346 3315 85
+346 3315 (170, 170)
+919 1797 85
+919 1797 (170, 170)
+937 1494 85
+937 1494 (170, 170)
+1655 488 85
+1655 488 (170, 170)
+648 1064 85
+648 1064 (170, 170)
+930 1436 85
+930 1436 (170, 170)
+172 1115 85
+172 1115 (170, 170)
+1296 2388 85
+1296 2388 (170, 170)
+461 1850 85
+461 1850 (170, 170)
+1428 1570 85
+1428 1570 (170, 170)
+2336 1322 85
+2336 1322 (170, 170)
+1450 379 85
+1450 379 (170, 170)
+1285 620 85
+1285 620 (170, 170)
+2012 1125 85
+2012 1125 (170, 170)
+3216 1158 85
+3216 1158 (170, 170)
+3360 1204 85
+3360 1204 (170, 170)
+2789 496 85
+2789 496 (170, 170)
+2050 237 85
+2050 237 (170, 170)
+600 544 85
+600 544 (170, 170)
+796 1643 85
+796 1643 (170, 170)
+2616 1682 85
+2616 1682 (170, 170)
+correcting centroids
+Saving sims in butler...
+Traceback (most recent call last):
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: visit.instrument, visit.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "test_small_sim.py", line 34, in <module>
+    stb.saveSimulation(name, observation, dof)
+  File "/phys/users/jfc20/donut-sims/donut_sims/simsToButler.py", line 202, in saveSimulation
+    self.registry.insertDimensionData(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registries/sql.py", line 759, in insertDimensionData
+    storage.insert(*records, replace=replace)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/dimensions/table.py", line 234, in insert
+    self._db.insert(self._table, *elementRows)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/databases/sqlite.py", line 454, in insert
+    return super().insert(table, *rows, select=select, names=names, returnIds=returnIds)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/interfaces/_database.py", line 1421, in insert
+    connection.execute(table.insert(), rows)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1289, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: visit.instrument, visit.name
+[SQL: INSERT INTO visit (instrument, id, physical_filter, visit_system, name, day_obs, exposure_time, target_name, observation_reason, science_program, zenith_angle, region, timespan_begin, timespan_end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('LSSTCam', 1147892, 'i', None, 'seed=27', None, None, None, None, None, None, None, 0, 4102444800000000000)]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+seed=27
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+1240 1795 (170, 170)
+207 625 (170, 170)
+913 1141 (170, 170)
+3575 368 (170, 170)
+3270 1376 (170, 170)
+2335 601 (170, 170)
+1736 1829 (170, 170)
+291 385 (170, 170)
+635 275 (170, 170)
+1631 514 (170, 170)
+610 701 (170, 170)
+2122 567 (170, 170)
+3812 1450 (170, 170)
+3842 1159 (170, 170)
+420 401 (170, 170)
+1860 3661 (170, 170)
+1142 2569 (170, 170)
+905 2173 (170, 170)
+1848 961 (170, 170)
+1613 2701 (170, 170)
+1531 3900 (170, 170)
+1555 744 (170, 170)
+895 2016 (170, 170)
+1681 2156 (170, 170)
+336 813 (170, 170)
+1593 368 (170, 170)
+1164 3815 (170, 170)
+489 1094 (170, 170)
+1160 836 (170, 170)
+1490 3355 (170, 170)
+1166 2908 (170, 170)
+477 3631 (170, 170)
+1570 252 (170, 170)
+638 1377 (170, 170)
+1134 3710 (170, 170)
+1722 2343 (170, 170)
+1226 1733 (170, 170)
+1086 906 (170, 170)
+2489 1301 (170, 170)
+3548 1191 (170, 170)
+2671 1119 (170, 170)
+2233 325 (170, 170)
+640 1650 (170, 170)
+350 1162 (170, 170)
+2535 1488 (170, 170)
+3297 1822 (170, 170)
+1414 1698 (170, 170)
+2233 822 (170, 170)
+2365 578 (170, 170)
+1925 367 (170, 170)
+3960 547 (170, 170)
+correcting centroids
+Saving sims in butler...
+Traceback (most recent call last):
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: visit.instrument, visit.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "test_small_sim.py", line 34, in <module>
+    stb.saveSimulation(name, observation, dof)
+  File "/phys/users/jfc20/donut-sims/donut_sims/simsToButler.py", line 202, in saveSimulation
+    self.registry.insertDimensionData(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registries/sql.py", line 759, in insertDimensionData
+    storage.insert(*records, replace=replace)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/dimensions/table.py", line 234, in insert
+    self._db.insert(self._table, *elementRows)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/databases/sqlite.py", line 454, in insert
+    return super().insert(table, *rows, select=select, names=names, returnIds=returnIds)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/interfaces/_database.py", line 1421, in insert
+    connection.execute(table.insert(), rows)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1289, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: visit.instrument, visit.name
+[SQL: INSERT INTO visit (instrument, id, physical_filter, visit_system, name, day_obs, exposure_time, target_name, observation_reason, science_program, zenith_angle, region, timespan_begin, timespan_end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('LSSTCam', 950263, 'i', None, 'seed=27', None, None, None, None, None, None, None, 0, 4102444800000000000)]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+seed=27
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+1735 269 (170, 170)
+3240 972 (170, 170)
+2913 831 (170, 170)
+2696 1141 (170, 170)
+994 902 (170, 170)
+753 678 (170, 170)
+807 840 (170, 170)
+2794 249 (170, 170)
+1926 1787 (170, 170)
+691 170 (170, 170)
+2630 859 (170, 170)
+612 1096 (170, 170)
+1115 1546 (170, 170)
+3744 1377 (170, 170)
+318 1760 (170, 170)
+1650 1729 (170, 170)
+3344 727 (170, 170)
+691 1333 (170, 170)
+1638 1337 (170, 170)
+1230 3411 (170, 170)
+862 3120 (170, 170)
+965 2137 (170, 170)
+1299 2220 (170, 170)
+949 2647 (170, 170)
+1372 1918 (170, 170)
+784 2140 (170, 170)
+641 1779 (170, 170)
+1387 3813 (170, 170)
+1816 3512 (170, 170)
+811 1806 (170, 170)
+1271 2309 (170, 170)
+1921 1818 (170, 164)
+1405 877 (170, 170)
+942 2740 (170, 170)
+1570 2625 (170, 170)
+1029 3781 (170, 170)
+1747 3713 (170, 170)
+764 1756 (170, 170)
+598 2984 (170, 170)
+346 3315 (170, 170)
+919 1797 (170, 170)
+937 1494 (170, 170)
+1655 488 (170, 170)
+648 1064 (170, 170)
+930 1436 (170, 170)
+172 1115 (170, 170)
+1296 2388 (170, 170)
+461 1850 (170, 170)
+1428 1570 (170, 170)
+2336 1322 (170, 170)
+1450 379 (170, 170)
+1285 620 (170, 170)
+2012 1125 (170, 170)
+3216 1158 (170, 170)
+3360 1204 (170, 170)
+2789 496 (170, 170)
+2050 237 (170, 170)
+600 544 (170, 170)
+796 1643 (170, 170)
+2616 1682 (170, 170)
+correcting centroids
+Saving sims in butler...
+Traceback (most recent call last):
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: visit.instrument, visit.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "test_small_sim.py", line 34, in <module>
+    stb.saveSimulation(name, observation, dof)
+  File "/phys/users/jfc20/donut-sims/donut_sims/simsToButler.py", line 202, in saveSimulation
+    self.registry.insertDimensionData(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registries/sql.py", line 759, in insertDimensionData
+    storage.insert(*records, replace=replace)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/dimensions/table.py", line 234, in insert
+    self._db.insert(self._table, *elementRows)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/databases/sqlite.py", line 454, in insert
+    return super().insert(table, *rows, select=select, names=names, returnIds=returnIds)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/interfaces/_database.py", line 1421, in insert
+    connection.execute(table.insert(), rows)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1289, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: visit.instrument, visit.name
+[SQL: INSERT INTO visit (instrument, id, physical_filter, visit_system, name, day_obs, exposure_time, target_name, observation_reason, science_program, zenith_angle, region, timespan_begin, timespan_end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('LSSTCam', 1147892, 'i', None, 'seed=27', None, None, None, None, None, None, None, 0, 4102444800000000000)]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+seed=28
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m38s 
+
+seed=29
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h06m24s 
+
+seed=30
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m28s 
+
+seed=31
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h30m09s 
+
+seed=32
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m06s 
+
+seed=33
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m48s 
+
+seed=34
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m40s 
+
+seed=35
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m27s 
+
+seed=36
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h02m13s 
+
+seed=37
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h02m44s 
+
+seed=38
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h06m37s 
+
+seed=39
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m07s 
+
+seed=40
+Generating DOFs...
+Simulating observation...
+selecting sources
+Traceback (most recent call last):
+  File "test_small_sim.py", line 29, in <module>
+    observation = obsSimulator.simulateObs(dof, rng)
+  File "/phys/users/jfc20/donut-sims/donut_sims/obsSimulator.py", line 105, in simulateObs
+    catalog = self.sourceSelector.selectSources(
+  File "/phys/users/jfc20/donut-sims/donut_sims/gaiaSourceSelector.py", line 353, in selectSources
+    skyBox = refObjLoader.loadPixelBox(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/meas_algorithms/gbe01a4569f+c1b4442b1a/python/lsst/meas/algorithms/loadReferenceObjects.py", line 856, in loadPixelBox
+    return self.loadRegion(outerSkyRegion, filterName, filtFunc=_filterFunction, epoch=epoch)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/meas_algorithms/gbe01a4569f+c1b4442b1a/python/lsst/meas/algorithms/loadReferenceObjects.py", line 907, in loadRegion
+    self.refCats[0].ref.datasetType.name,
+IndexError: list index out of range
+  File "test_small_sim.py", line 16
+    name = f"seed={seed}"
+                        ^
+SyntaxError: invalid syntax
+  File "test_small_sim.py", line 16
+    name = f"seed={seed}"
+                        ^
+SyntaxError: invalid syntax
+seed=40
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m53s 
+
+seed=41
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m41s 
+
+seed=42
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h09m38s 
+
+seed=43
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h04m51s 
+
+seed=44
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m56s 
+
+seed=45
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h04m41s 
+
+seed=46
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m09s 
+
+seed=47
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m35s 
+
+seed=48
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h02m36s 
+
+seed=49
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h00m55s 
+
+seed=50
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m02s 
+
+seed=51
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m06s 
+
+seed=52
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m38s 
+
+seed=53
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m50s 
+
+seed=54
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m16s 
+
+seed=55
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m37s 
+
+seed=56
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h00m59s 
+
+seed=57
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h06m14s 
+
+seed=58
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m02s 
+
+seed=59
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h02m22s 
+
+seed=60
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h00m45s 
+
+seed=61
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Traceback (most recent call last):
+  File "test_small_sim.py", line 34, in <module>
+    stb.saveSimulation(name, observation, dof)
+  File "/phys/users/jfc20/donut-sims/donut_sims/simsToButler.py", line 213, in saveSimulation
+    donutStamps = self.wrapStamps(stamps, catalog)
+  File "/phys/users/jfc20/donut-sims/donut_sims/simsToButler.py", line 103, in wrapStamps
+    image=afwImage.ImageF(stamps[star["objectId"]])
+KeyError: 3257545712616797824
+seed=62
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Traceback (most recent call last):
+  File "test_small_sim.py", line 34, in <module>
+    stb.saveSimulation(name, observation, dof)
+  File "/phys/users/jfc20/donut-sims/donut_sims/simsToButler.py", line 219, in saveSimulation
+    donutStamps = self.wrapStamps(stamps, catalog)
+  File "/phys/users/jfc20/donut-sims/donut_sims/simsToButler.py", line 104, in wrapStamps
+    if star not in stamps:
+TypeError: unhashable type: 'Row'
+seed=62
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Traceback (most recent call last):
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: visit.instrument, visit.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "test_small_sim.py", line 34, in <module>
+    stb.saveSimulation(name, observation, dof)
+  File "/phys/users/jfc20/donut-sims/donut_sims/simsToButler.py", line 208, in saveSimulation
+    self.registry.insertDimensionData(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registries/sql.py", line 759, in insertDimensionData
+    storage.insert(*records, replace=replace)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/dimensions/table.py", line 234, in insert
+    self._db.insert(self._table, *elementRows)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/databases/sqlite.py", line 454, in insert
+    return super().insert(table, *rows, select=select, names=names, returnIds=returnIds)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/share/eups/Linux64/daf_butler/g40211b77cd+1008d2a466/python/lsst/daf/butler/registry/interfaces/_database.py", line 1421, in insert
+    connection.execute(table.insert(), rows)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1289, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/astro/store/epyc/projects/lsst_comm/lsstinstall/conda/envs/lsst-scipipe-2.0.0/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: visit.instrument, visit.name
+[SQL: INSERT INTO visit (instrument, id, physical_filter, visit_system, name, day_obs, exposure_time, target_name, observation_reason, science_program, zenith_angle, region, timespan_begin, timespan_end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('LSSTCam', 1002626, 'i', None, 'seed=62', None, None, None, None, None, None, None, 0, 4102444800000000000)]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+seed=63
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h04m14s 
+
+seed=64
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h04m16s 
+
+seed=65
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h02m00s 
+
+seed=66
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h06m31s 
+
+seed=67
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m17s 
+
+seed=68
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m08s 
+
+seed=69
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m54s 
+
+seed=70
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m00s 
+
+seed=71
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m52s 
+
+seed=72
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m40s 
+
+seed=73
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m55s 
+
+seed=74
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h00m54s 
+
+seed=75
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h02m15s 
+
+seed=76
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m40s 
+
+seed=77
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h04m31s 
+
+seed=78
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h00m53s 
+
+seed=79
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h10m12s 
+
+seed=80
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m11s 
+
+seed=81
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h00m48s 
+
+seed=82
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m36s 
+
+seed=83
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m26s 
+
+seed=84
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m43s 
+
+seed=85
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h09m38s 
+
+seed=86
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m31s 
+
+seed=87
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m41s 
+
+seed=88
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h02m44s 
+
+seed=89
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m29s 
+
+seed=90
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m07s 
+
+seed=91
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m12s 
+
+seed=92
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h02m28s 
+
+seed=93
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h01m45s 
+
+seed=94
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h08m28s 
+
+seed=95
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h03m31s 
+
+seed=96
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h05m04s 
+
+seed=97
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h02m32s 
+
+seed=98
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h07m21s 
+
+seed=99
+Generating DOFs...
+Simulating observation...
+selecting sources
+building the image simulator
+simulating the images
+correcting centroids
+Saving sims in butler...
+Elapsed time 00h09m20s 
+
+script time 02h33m05s

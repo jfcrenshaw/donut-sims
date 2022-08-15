@@ -1,39 +1,61 @@
-[tool.poetry]
+[project]
 name = "donut_sims"
 version = "0.1.0"
 description = "Donut simulations for the Rubin AOS Wavefront estimation pipeline."
-authors = ["John Franklin Crenshaw <jfcrenshaw@gmail.com>"]
-license = "MIT"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE"}
+authors = [{name = "John Franklin Crenshaw", email = "jfcrenshaw@gmail.com"}]
+dependencies = [
+    "galsim == 2.3.5",
+    "batoid == 0.3.7",
+    "scipy == 1.8.1",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.8,<3.11"
-GalSim = "^2.3.4"
-batoid = "^0.3.7"
-scipy = "^1.8.0"
-matplotlib = "^3.5.1"
-jupyter = "^1.0.0"
+[project.optional-dependencies]
+interactive = [
+    "matplotlib == 3.5.2",
+    "jupyterlab == 3.4.3",
+]
+dev = [
+    "black == 22.6.0",
+    "mypy == 0.961",
+    "isort == 5.10.1",
+    "flake8 == 4.0.1",
+    "flake8-black == 0.3.3",
+    "flake8-broken-line == 0.4.0",
+    "flake8-bugbear == 22.7.1",
+    "flake8-builtins == 1.5.3",
+    "flake8-comprehensions == 3.10.0",
+    "flake8-docstrings == 1.6.0",
+    "flake8-eradicate == 1.2.1",
+    "flake8-isort == 4.1.1",
+    "flake8-markdown == 0.3.0",
+    "flake8-print == 5.0.0",
+    "flake8-pytest-style == 1.6.0",
+    "flake8-simplify == 0.19.2",
+    "flake8-tidy-imports == 4.8.0",
+    "jupyterlab-flake8 == 0.7.1",
+]
 
-[tool.poetry.dev-dependencies]
-black = "^21.12b0"
-mypy = "^0.931"
-isort = "^5.10.1"
-flake8 = "^4.0.1"
-flake8-black = "^0.2.3"
-flake8-broken-line = "^0.4.0"
-flake8-bugbear = "^22.1.11"
-flake8-builtins = "^1.5.3"
-flake8-comprehensions = "^3.8.0"
-flake8-docstrings = "^1.6.0"
-flake8-eradicate = "^1.2.0"
-flake8-isort = "^4.1.1"
-flake8-markdown = "^0.3.0"
-flake8-print = "^4.0.0"
-flake8-pytest-style = "^1.6.0"
-flake8-simplify = "^0.14.5"
-flake8-tidy-imports = "^4.6.0"
-jupyterlab-flake8 = "^0.7.1"
-pep8-naming = "^0.12.1"
+[project.urls]
+"repository" = "https://github.com/jfcrenshaw/donut-sims"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = [
+    "setuptools >=42",
+    "setuptools_scm[toml] >=3.4",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["donut_sims"]
+
+[tool.mypy]
+follow_imports = "silent"
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_any_generics = true
+check_untyped_defs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
