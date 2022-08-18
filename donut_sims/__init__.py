@@ -1,6 +1,7 @@
 # flake8: noqa F401
 import importlib.metadata
 
+from donut_sims.dofsToZernikes import dofsToZernikes
 from donut_sims.gaiaSourceSelector import GaiaSourceSelector
 from donut_sims.generateDOF import generateDOF
 from donut_sims.imageSimulator import ImageSimulator

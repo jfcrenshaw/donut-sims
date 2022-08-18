@@ -5,11 +5,12 @@ Using this to quickly test that everything is working.
 import time
 
 import numpy as np
+
 from donut_sims import ObsSimulator, SimsToButler, generateDOF
 
 script_start = time.time()
 
-for seed in range(100):
+for seed in range(1000):
     start = time.time()
 
     name = f"seed={seed}"

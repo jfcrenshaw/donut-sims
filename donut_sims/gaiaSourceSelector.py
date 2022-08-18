@@ -399,8 +399,8 @@ class GaiaSourceSelector:
                     pixelPoints, detector.makeCameraSys(PIXELS), FIELD_ANGLE
                 )
             )
-            cat["xField"] = fieldAngles[:, 0]
-            cat["yField"] = fieldAngles[:, 1]
+            cat["xField"] = fieldAngles[:, 0] * u.rad
+            cat["yField"] = fieldAngles[:, 1] * u.rad
 
             catalog.append(cat)
 
@@ -424,6 +424,10 @@ class GaiaSourceSelector:
                 "temperature",
             ]
         ]
+
+        # add units to the centroid columns
+        catalog["xCentroid"].unit = u.pix
+        catalog["yCentroid"].unit = u.pix
 
         # clip the magnitudes for efficiency
         # I will remove this later

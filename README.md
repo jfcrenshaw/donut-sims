@@ -27,4 +27,5 @@ ln -s /usr/bin/cmake3 ~/.local/bin/cmake
 
 NOTE:
 The pip install seems to work, and a donut-sims package appears in my local site packages, but I still cannot import `donut_sims`.
-You can get around this by running scripts in the root directory of donut-sims, but I will try to fix this in the future.
+You can get around this by running scripts in the root directory of donut-sims, or by adding a symlink to `donut_sims` in the `bin/`.
+I will try to fix this in the future.

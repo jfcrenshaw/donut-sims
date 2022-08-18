@@ -6,8 +6,8 @@ source /astro/store/epyc/projects/lsst_comm/lsstinstall/loadLSST.bash
 setup lsst_distrib
 
 # setup the AOS packages
-setup -k -r /phys/users/jfc20/lsst/ts_wep
-setup -k -r /phys/users/jfc20/lsst/phosim_utils
+setup -k -r /astro/store/epyc/users/jfc20/lsst/ts_wep
+setup -k -r /astro/store/epyc/users/jfc20/lsst/phosim_utils
 
 # export path to rubin_sim data
 export RUBIN_SIM_DATA_DIR=/astro/store/epyc/users/jfc20/rubin_sim_data

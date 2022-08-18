@@ -54,6 +54,9 @@ class ObsScheduler:
         # save the observations
         self.observations = observations
 
+        # keep a list of the remaining indices
+        self._remaining = np.arange(len(observations))
+
     def getRandomObservation(self, rng: np.random.Generator) -> table.Row:
         """Get a random observation from the database of observations.
 
@@ -67,5 +70,14 @@ class ObsScheduler:
         astropy.table.Row
             The random observation in an Astropy table.
         """
-        idx = rng.integers(len(self.observations))
+        # if we've already used all the observations, raise an error
+        if len(self._remaining) == 0:
+            raise RuntimeError("No more unique observations left.")
+
+        # randomly select one of the remaining observations
+        idx = rng.integers(len(self._remaining))
+
+        # remove it from the list of remaining observations
+        self._remaining = np.delete(self._remaining, idx)
+
         return self.observations[idx]
