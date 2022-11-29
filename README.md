@@ -1,6 +1,7 @@
 # donut-sims
 
 Donut simulations for the Rubin AOS Wavefront estimation pipeline.
+Note this folder also contains scripts for running zernike estimation on these simulations (assuming access to ts_wep, and a trained ML estimator), as well as plots to compare performance.
 
 To install:
 
