@@ -1,6 +1,6 @@
 
 # load the LSST conda environment
-source /astro/store/epyc/projects/lsst_comm/lsstinstall/loadLSST.bash
+source /astro/store/epyc/projects/lsst_comm/lsstinstall/loadLSST.sh
 
 # activate the lsst_distrib top-level package
 setup lsst_distrib

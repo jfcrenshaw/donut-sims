@@ -77,6 +77,7 @@ class ImageSimulator:
         }
 
         # load the bandpass
+        self._filterName = filterName
         self._bandpass = galsim.Bandpass(
             f"LSST_{filterName}.dat", wave_type="nm"
         ).withZeropoint("AB")
@@ -117,6 +118,19 @@ class ImageSimulator:
     def atm_kwargs(self) -> Dict[str, Union[float, int]]:
         """Return the atmosphere params."""
         return self._atm_kwargs
+
+    def setDOF(self, dof: np.ndarray) -> None:
+        """Set the degrees of freedom that determine the telescope state.
+
+        Parameters
+        ----------
+        dof: np.ndarray
+            Array of the 50 degrees of freedom used by wfsim to perturb the telescope.
+        """
+        telescope = batoid.Optic.fromYaml(f"LSST_{self._filterName}.yaml")
+        factory = wfsim.SSTFactory(telescope)
+        self._telescope = factory.get_telescope(dof=dof)
+        self._simulator.telescope = self._telescope
 
     def getSimulator(self, chip: str) -> wfsim.SimpleSimulator:
         """Return the simulator for the corresponding chip.

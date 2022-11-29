@@ -1,6 +1,7 @@
 """Generate random degrees of freedom for telescope perturbations."""
 import numpy as np
 import numpy.typing as npt
+from scipy.special import erf, gamma
 
 
 def generateDOF(
@@ -27,11 +28,6 @@ def generateDOF(
     np.ndarray
         Numpy array of sampled degrees of freedom.
     """
-    # laplace scale
-    # i.e. this is the expected norm for 50 Laplace distributed random variables
-    # with scale factor 1
-    laplace_scale = 9.88789223503036
-
     # scales for each DOF
     # units are arcsec / unit of perturbation
     dof_scale = np.array(
@@ -89,9 +85,23 @@ def generateDOF(
         ]
     )
 
-    dofs = rng.laplace(
-        scale=1 / dof_scale * norm / laplace_scale,
-        size=(size, len(dof_scale)),
+    # normal scale
+    # i.e. this is the expected norm for a Normal vector
+    ndof = len(dof_scale)
+    normal_scale = np.sqrt(2) * gamma((ndof + 1) / 2) / gamma(ndof / 2)
+
+    dofs = rng.normal(
+        scale=1 / dof_scale / normal_scale,
+        size=(size, ndof),
     )
+
+    # draw a total norm from the folded Gaussian distribution
+    # the folded Gaussian has mu=sigma, and mu chosen such that the expected
+    # value of rand_norm = norm
+    mu = norm / (np.sqrt(2 / np.pi) * np.exp(-1 / 2) + erf(1 / np.sqrt(2)))
+    rand_norm = np.abs(rng.normal(mu, mu, size=(size, 1)))
+
+    # rescale so that the total norms match
+    dofs *= rand_norm
 
     return dofs.squeeze()

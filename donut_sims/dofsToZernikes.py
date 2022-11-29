@@ -9,12 +9,20 @@ import wfsim
 # the centers are the centers of the unions of the extra
 # and intra focal chips
 detectorLocations = {
+    # bottom left
+    "R00": (-0.02075, -0.02075),
     "R00_SW0": (-0.02075, -0.02075),
     "R00_SW1": (-0.02075, -0.02075),
+    # top left
+    "R40": (-0.02075, +0.02075),
     "R40_SW0": (-0.02075, +0.02075),
     "R40_SW1": (-0.02075, +0.02075),
+    # bottom right
+    "R04": (+0.02075, -0.02075),
     "R04_SW0": (+0.02075, -0.02075),
     "R04_SW1": (+0.02075, -0.02075),
+    # top right
+    "R44": (+0.02075, +0.02075),
     "R44_SW0": (+0.02075, +0.02075),
     "R44_SW1": (+0.02075, +0.02075),
 }
@@ -28,7 +36,7 @@ def dofsToZernikes(
     """Calculate zernikes for the detector given the perturbations.
 
     Note the zernikes are calculated at the center of the CWFS.
-    So for example, if detector == "R00_SW0", then the zernikes
+    For example, if detector == "R00_SW0", then the zernikes
     are calculated at the center of R00_SW0 U R00_SW1.
 
     The Noll indices of zernikes returned are 4-22.
@@ -46,6 +54,7 @@ def dofsToZernikes(
     -------
     np.ndarray
         The array of zernikes for the detector, with Noll indixes 4-22.
+        (units: microns)
     """
     # get the location where we calculate zernikes
     location = detectorLocations[detector]
@@ -62,7 +71,10 @@ def dofsToZernikes(
         location[0],
         location[1],
         bandpass.effective_wavelength * 1e-9,  # nm -> m
-        jmax=22,
+        jmax=23,
     )
+
+    # convert from waves -> microns
+    zernikes *= bandpass.effective_wavelength / 1e3
 
     return zernikes[4:]

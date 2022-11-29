@@ -13,16 +13,17 @@ class ObsSimulator:
 
     def __init__(
         self,
-        opsim_path: str = "/astro/store/epyc/users/jfc20/rubin_sim_data/sim_baseline/baseline.db",
+        opsimPath: str = "/astro/store/epyc/users/jfc20/rubin_sim_data/sim_baseline/baseline.db",
         butlerRepo: str = "/epyc/data/lsst_refcats/gen3",
         collections: List[str] = ["refcats"],
         refCatName: str = "gaia_dr2_20200414",
         donutRadius: float = 75,
+        checkDir: str = None,
     ) -> None:
         """
         Parameters
         ----------
-        opsim_path: str
+        opsimPath: str
             Path to the OpSim simulation database.
         butlerRepo: str, default="/epyc/data/lsst_refcats/gen3"
             Path to the butler repository.
@@ -32,9 +33,12 @@ class ObsSimulator:
             Name of the reference catalog.
         donutRadius: float, default=75
             The donut radius used to determine whether donuts are blended.
+        checkDir: str, optional
+            The directory to check for pre-existing simulations.
+            Any already-simulated pointings will be skipped.
         """
         # create the Observation Scheduler
-        self.obsScheduler = ObsScheduler(opsim_path=opsim_path)
+        self.obsScheduler = ObsScheduler(opsimPath=opsimPath, checkDir=checkDir)
 
         # create the Source Selector
         self.sourceSelector = GaiaSourceSelector(
@@ -44,10 +48,16 @@ class ObsSimulator:
             donutRadius=donutRadius,
         )
 
+        # no cached observation or simulator at instantiation
+        self._cache_obs = None
+        self._cache_simulator = None
+
     def simulateObs(
         self,
         dof: npt.NDArray[np.float64],
         rng: np.random.Generator,
+        recomputeAtm: bool = True,
+        maxAosSources: int = 4,
         expTime: float = 15,
         temperature: float = 293,
         pressure: float = 69,
@@ -66,7 +76,13 @@ class ObsSimulator:
             The degrees of freedom that perturb the telescope and mirror.
         rng: np.random.Generator
             A numpy random number generator.
-        expTime: int
+        recomputeAtm: bool, default=True
+            Whether to recompute the atmosphere using the new OpSim selection.
+            If False, the new OpSim selection is only used to generate a new
+            star catalog at a new pointing.
+        maxAosSources: int, default=3
+            The maximum number of AOS sources per detector.
+        expTime: int, default=15
             The exposure time in seconds.
         temperature: float, default=293
             The temperature in Kelvin.
@@ -99,44 +115,62 @@ class ObsSimulator:
         while catalog is None:
             try:
                 # get a random observation
-                observation = self.obsScheduler.getRandomObservation(rng)
+                new_obs = self.obsScheduler.getRandomObservation(rng)
+
+                # determine the filter we are observing in
+                lsstFilter = (
+                    new_obs["lsstFilter"]
+                    if recomputeAtm
+                    else self._cache_obs["lsstFilter"]  # type: ignore
+                )
 
                 # get a catalog from the pointing
                 catalog = self.sourceSelector.selectSources(
-                    boresightRA=observation["boresightRa"],
-                    boresightDec=observation["boresightDec"],
-                    boresightRotAng=observation["boresightRotAng"],
-                    lsstFilter=observation["lsstFilter"],
+                    boresightRA=new_obs["boresightRa"],
+                    boresightDec=new_obs["boresightDec"],
+                    boresightRotAng=new_obs["boresightRotAng"],
+                    lsstFilter=lsstFilter,
                     selectAosSources=True,
+                    maxAosSources=maxAosSources,
                     rng=rng,
                 )
             except:
                 pass
 
-        # add observation IDs to match stars to the opsim ID
-        catalog.add_column(
-            len(catalog) * [observation["observationId"]], 0, "observationId"
-        )
+        # if we are recomputing the atmosphere, we must re-build the image simulator
+        if recomputeAtm:
+            print("building the image simulator")
+            simulator = ImageSimulator(
+                dof=dof,
+                filterName=new_obs["lsstFilter"],
+                zenith=np.arccos(1 / new_obs["airmass"]),
+                raw_seeing=new_obs["seeingFwhm500"],
+                expTime=expTime,
+                temperature=temperature,
+                pressure=pressure,
+                H2O_pressure=H2O_pressure,
+                screen_size=screen_size,
+                screen_scale=screen_scale,
+                nproc=nproc,
+                rng=rng,
+            )
+            self._cache_simulator = simulator
 
-        # build the image simulator
-        print("building the image simulator")
-        simulator = ImageSimulator(
-            dof=dof,
-            filterName=observation["lsstFilter"],
-            zenith=np.arccos(1 / observation["airmass"]),
-            raw_seeing=observation["seeingFwhm500"],
-            expTime=expTime,
-            temperature=temperature,
-            pressure=pressure,
-            H2O_pressure=H2O_pressure,
-            screen_size=screen_size,
-            screen_scale=screen_scale,
-            nproc=nproc,
-            rng=rng,
-        )
+            # get the sky background
+            background = new_obs["skyBrightness"] if background else None
 
-        # set the sky background
-        background = observation["skyBrightness"] if background else None
+            # and cache the new observation
+            self._cache_obs = new_obs
+
+        else:
+            # use the cached simulator
+            simulator = self._cache_simulator
+
+            # and the corresponding sky background
+            background = self._cache_obs["skyBrightness"] if background else None
+
+            # but set the new dof
+            simulator.setDOF(dof)
 
         # simulate the images
         print("simulating the images")
@@ -148,8 +182,15 @@ class ObsSimulator:
         print("correcting centroids")
         catalog = simulator._correctCentroids(catalog)
 
+        # add pointing IDs to match pointings to the opsim ID
+        catalog.add_column(len(catalog) * [new_obs["observationId"]], 0, "pointingId")
+
+        # add observation IDs to match observing conditions to the opsim ID
+        catalog.add_column(
+            len(catalog) * [self._cache_obs["observationId"]], 1, "observationId"
+        )
+
         return {
-            "metadata": observation,
             "catalog": catalog,
             "images": images,
         }

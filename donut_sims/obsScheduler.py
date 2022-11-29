@@ -5,6 +5,7 @@ import astropy.units as u
 import numpy as np
 import pandas as pd
 from astropy import table
+from glob import glob
 
 
 class ObsScheduler:
@@ -31,16 +32,20 @@ class ObsScheduler:
 
     def __init__(
         self,
-        opsim_path: str = "/astro/store/epyc/users/jfc20/rubin_sim_data/sim_baseline/baseline.db",
+        opsimPath: str = "/astro/store/epyc/users/jfc20/rubin_sim_data/sim_baseline/baseline.db",
+        checkDir: str = None,
     ) -> None:
         """
         Parameters
         ----------
         opsim_path: str
             Path to the OpSim simulation database.
+        checkDir: str, optional
+            The directory to check for pre-existing simulations.
+            Any already-simulated pointings will be skipped.
         """
         # read the observations from the sql database
-        with sqlite3.connect(opsim_path) as conn:
+        with sqlite3.connect(opsimPath) as conn:
             observations = pd.read_sql(
                 f"select {', '.join(self._columns.keys())} from observations;", conn
             )
@@ -55,7 +60,15 @@ class ObsScheduler:
         self.observations = observations
 
         # keep a list of the remaining indices
-        self._remaining = np.arange(len(observations))
+        self._remaining = list(np.arange(len(observations)))
+
+        # if checkDir provided, remove previous pointings from the remaining list
+        if checkDir is not None:
+            files = glob(f"{checkDir}/dof/*")
+            old_pointings = [
+                int(file.split("/")[-1].split(".")[0][3:]) for file in files
+            ]
+            self._remaining = [i for i in self._remaining if i not in old_pointings]
 
     def getRandomObservation(self, rng: np.random.Generator) -> table.Row:
         """Get a random observation from the database of observations.
@@ -75,9 +88,6 @@ class ObsScheduler:
             raise RuntimeError("No more unique observations left.")
 
         # randomly select one of the remaining observations
-        idx = rng.integers(len(self._remaining))
-
-        # remove it from the list of remaining observations
-        self._remaining = np.delete(self._remaining, idx)
-
-        return self.observations[idx]
+        remaining_idx = rng.integers(len(self._remaining))
+        observation_idx = self._remaining.pop(remaining_idx)
+        return self.observations[observation_idx]

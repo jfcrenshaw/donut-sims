@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# whatever those nfs files are
+**/.nfs*
+
+# and the jvsc notebook files
+**/*jvsc*.ipynb
