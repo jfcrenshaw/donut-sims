@@ -1,6 +1,5 @@
 """Calculate zernikes from telescope degrees of freedom."""
 import batoid
-import galsim
 import numpy as np
 import numpy.typing as npt
 import wfsim
@@ -41,6 +40,10 @@ def dofsToZernikes(
 
     The Noll indices of zernikes returned are 4-22.
 
+    Currently, this function uses a fiducial wavelength of 1 micron, and
+    returns the zernikes of the OPD, i.e. the perturbed zernikes minus
+    the ideal zernikes.
+
     Parameters
     ----------
     dof: np.ndarray
@@ -60,21 +63,31 @@ def dofsToZernikes(
     location = detectorLocations[detector]
 
     # perturb the telescope
-    bandpass = galsim.Bandpass(f"LSST_{band}.dat", wave_type="nm")
     telescope = batoid.Optic.fromYaml(f"LSST_{band}.yaml")
     factory = wfsim.SSTFactory(telescope)
     perturbed_telescope = factory.get_telescope(dof=dof)
 
-    # calculate the zernikes
-    zernikes = batoid.zernike(
+    # calculate the perturbed zernikes
+    zk = batoid.zernike(
         perturbed_telescope,
         location[0],
         location[1],
-        bandpass.effective_wavelength * 1e-9,  # nm -> m
-        jmax=23,
+        1e-6,  # nm -> m
+        jmax=22,
+        eps=perturbed_telescope.pupilObscuration,
     )
 
-    # convert from waves -> microns
-    zernikes *= bandpass.effective_wavelength / 1e3
+    # and the ideal zernikes
+    zk0 = batoid.zernike(
+        telescope,
+        location[0],
+        location[1],
+        1e-6,  # nm -> m
+        jmax=22,
+        eps=telescope.pupilObscuration,
+    )
 
-    return zernikes[4:]
+    # we want the difference (i.e. the OPD)
+    opd = zk - zk0
+
+    return opd[4:]
