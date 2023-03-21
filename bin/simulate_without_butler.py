@@ -30,7 +30,7 @@ obsSimulator = ObsSimulator(checkDir=str(SAVE_DIR))
 obsSimulator.obsScheduler.observations.write(SAVE_DIR / "opSimTable.parquet")
 
 
-for seed in range(10_000):
+for seed in range(100_000):
 
     # start timing this simulation
     start = time.time()
@@ -47,7 +47,7 @@ for seed in range(10_000):
 
     # simulate the donuts
     print("Simulating observation...")
-    recomputeAtm = seed % 100 == 0
+    recomputeAtm = seed % 1000 == 0
     observation = obsSimulator.simulateObs(dof, rng, recomputeAtm=recomputeAtm)
 
     # get the metadata
@@ -79,7 +79,7 @@ for seed in range(10_000):
 
     # print how long this simulation took
     elapsed = time.time() - start
-    print("Elapsed time", time.strftime("%Hh%Mm%Ss", time.gmtime(elapsed)), "\n")
+    print("Elapsed time", timedelta(seconds=elapsed), "\n")
 
 # figure out how long the whole thing took
 sims_end = time.time()
