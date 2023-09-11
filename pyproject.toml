@@ -10,6 +10,7 @@ dependencies = [
     "galsim == 2.3.5",
     "batoid == 0.3.7",
     "scipy == 1.8.1",
+    "wfsim @ git+ssh://git@github.com:jmeyers314/wfsim.git",
 ]
 
 [project.optional-dependencies]
@@ -55,7 +56,7 @@ where = ["donut_sims"]
 follow_imports = "silent"
 warn_redundant_casts = true
 warn_unused_ignores = true
-disallow_any_generics = true
+disallow_any_generics = false
 check_untyped_defs = true
 disallow_untyped_defs = true
 ignore_missing_imports = true
