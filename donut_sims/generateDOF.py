@@ -1,12 +1,11 @@
 """Generate random degrees of freedom for telescope perturbations."""
 import numpy as np
-import numpy.typing as npt
 from scipy.special import erf, gamma
 
 
 def generateDOF(
     rng: np.random.Generator, norm: float = 0.25, size: int = 1
-) -> npt.NDArray[np.float64]:
+) -> np.ndarray:
     """Generate random perturbations to the telescope.
 
     The degrees of freedom (DOFs) are drawn from a multidimensional Laplace

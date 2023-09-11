@@ -1,7 +1,6 @@
 """Calculate zernikes from telescope degrees of freedom."""
 import batoid
 import numpy as np
-import numpy.typing as npt
 import wfsim
 
 # the field angles in radians of the center of the CWFSs
@@ -28,10 +27,11 @@ detectorLocations = {
 
 
 def dofsToZernikes(
-    dof: npt.NDArray[np.float64],
+    dof: np.ndarray,
     detector: str,
     band: str = "r",
-) -> npt.NDArray[np.float64]:
+    subtract_zk0: bool = True,
+) -> np.ndarray:
     """Calculate zernikes for the detector given the perturbations.
 
     Note the zernikes are calculated at the center of the CWFS.
@@ -40,9 +40,7 @@ def dofsToZernikes(
 
     The Noll indices of zernikes returned are 4-22.
 
-    Currently, this function uses a fiducial wavelength of 1 micron, and
-    returns the zernikes of the OPD, i.e. the perturbed zernikes minus
-    the ideal zernikes.
+    Currently, this function uses a fiducial wavelength of 1 micron.
 
     Parameters
     ----------
@@ -52,6 +50,8 @@ def dofsToZernikes(
         The name of the detector to calculate zernikes for.
     band: str, default="r"
         The name of the band the images are observed in.
+    subtract_zk0: bool, default=False
+        Whether to subtract the intrinsic Zernikes.
 
     Returns
     -------
@@ -77,17 +77,14 @@ def dofsToZernikes(
         eps=perturbed_telescope.pupilObscuration,
     )
 
-    # and the ideal zernikes
-    zk0 = batoid.zernike(
-        telescope,
-        location[0],
-        location[1],
-        1e-6,  # nm -> m
-        jmax=22,
-        eps=telescope.pupilObscuration,
-    )
+    if subtract_zk0:
+        zk -= batoid.zernike(
+            telescope,
+            location[0],
+            location[1],
+            1e-6,  # nm -> m
+            jmax=22,
+            eps=telescope.pupilObscuration,
+        )
 
-    # we want the difference (i.e. the OPD)
-    opd = zk - zk0
-
-    return opd[4:]
+    return zk[4:]

@@ -11,9 +11,9 @@ import wfsim
 from astropy import table
 from lsst.afw.cameraGeom import FIELD_ANGLE, PIXELS, Camera, Detector
 from lsst.meas.algorithms import LoadReferenceObjectsConfig, ReferenceObjectLoader
-from lsst.ts.wep.ParamReader import ParamReader
-from lsst.ts.wep.task.RefCatalogInterface import RefCatalogInterface
-from lsst.ts.wep.Utility import getConfigDir
+from lsst.ts.wep.paramReader import ParamReader
+from lsst.ts.wep.task.refCatalogInterface import RefCatalogInterface
+from lsst.ts.wep.utility import getConfigDir
 from sklearn.neighbors import NearestNeighbors
 
 

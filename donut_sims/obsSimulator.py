@@ -2,7 +2,6 @@
 from typing import Dict, List, Union
 
 import numpy as np
-import numpy.typing as npt
 from astropy import table
 
 from donut_sims import GaiaSourceSelector, ImageSimulator, ObsScheduler
@@ -54,7 +53,7 @@ class ObsSimulator:
 
     def simulateObs(
         self,
-        dof: npt.NDArray[np.float64],
+        dof: np.ndarray,
         rng: np.random.Generator,
         recomputeAtm: bool = True,
         maxAosSources: int = 4,
@@ -68,7 +67,7 @@ class ObsSimulator:
         background: bool = True,
         returnStamps: bool = True,
         cropRadius: int = 85,
-    ) -> Dict[str, Union[table.Row, table.Table, npt.NDArray[np.float64]]]:
+    ) -> Dict[str, Union[table.Row, table.Table, np.ndarray]]:
         """
         Parameters
         ----------
